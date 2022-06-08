@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SharedModule} from "./shared/shared.module";
+import {UsuariosModule} from "./usuarios/usuarios.module";
+import {IncidenciasModule} from "./incidencias/incidencias.module";
+import {CentralesModule} from "./centrales/centrales.module";
+import {PrimengModule} from "./primeng/primeng.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +16,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    UsuariosModule,
+    IncidenciasModule,
+    CentralesModule,
+    PrimengModule
   ],
   providers: [],
   bootstrap: [AppComponent]
