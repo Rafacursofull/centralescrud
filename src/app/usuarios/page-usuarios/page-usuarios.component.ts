@@ -13,12 +13,13 @@ import {MessageService} from "primeng/api";
 export class PageUsuariosComponent implements OnInit {
 
   //Usar el servicio UsuariosService
-  public listaUsuarios?: Usuario[];
+  public listaUsuarios: Usuario[];
 
   public cargando: boolean;
 
   constructor(private _usuariosService: UsuariosService, private _mensajesServices: MessageService) {
     this.cargando= false;
+    this.listaUsuarios=[];
   }
 
   ngOnInit(): void {
@@ -37,12 +38,13 @@ export class PageUsuariosComponent implements OnInit {
 
   }
   public datosUsuarios() {
-    this.cargando= true;
+    this.cargando=true;
     this._usuariosService.getUsuarios().subscribe(
       {
         next: (resp) => {
           console.log("Respuesta: ", resp);
           this.listaUsuarios = resp;
+          this.cargando=false;
         },
         error: () => {
           this._mensajesServices.add({
@@ -52,12 +54,8 @@ export class PageUsuariosComponent implements OnInit {
             life: 5000,
             sticky: true
           });
-        },
-        complete: (
-        ) => {
           this.cargando=false;
-        }
-
+        },
       });
   }
 }

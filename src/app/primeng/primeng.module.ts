@@ -4,6 +4,7 @@ import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ToastModule} from 'primeng/toast';
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {ToastModule} from 'primeng/toast';
     CardModule,
     ButtonModule,
     ProgressBarModule,
-    ToastModule
+    ToastModule,
+    TableModule
   ]
 
 })
