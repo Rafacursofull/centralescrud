@@ -39,7 +39,7 @@ export class PageUsuariosComponent implements OnInit {
   }
   public datosUsuarios() {
     this.cargando=true;
-    this._usuariosService.getUsuarios().subscribe(
+    this._usuariosService.getAll().subscribe(
       {
         next: (resp) => {
           console.log("Respuesta: ", resp);

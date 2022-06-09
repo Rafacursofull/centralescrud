@@ -2,13 +2,18 @@
   <p-progressBar *ngIf="cargando" mode="indeterminate"></p-progressBar>
   <div *ngIf="listaUsuarios">
     <p-table [value]="listaUsuarios"
-             styleClass="p-datable-striped" responsiveLayout="scroll">
+             styleClass="p-datable-striped"
+             responsiveLayout="scroll"
+             [paginator]="true"
+             [rows]="4"
+             [showCurrentPageReport]="true"
+             currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} usuarios">
       <ng-template  pTemplate="header">
         <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Rol</th>
+          <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="nombre">Nombre<p-sortIcon field="nombre"></p-sortIcon></th>
+          <th pSortableColumn="correo">Email<p-sortIcon field="email"></p-sortIcon></th>
+          <th pSortableColumn="rol.rol">Rol<p-sortIcon field="rol"></p-sortIcon></th>
           <th>Acciones</th>
         </tr>
       </ng-template>
